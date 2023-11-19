@@ -11,7 +11,7 @@ public class Calculadora {
 
     public static int menosInteiros(int num1, int num2){
         int menos = num1 + num2;
-        System.out.println("Subtração de " + num1 + " + " + num2 + " = " + menos);
+        System.out.println("Subtração de " + num1 + " - " + num2 + " = " + menos);
         return menos;
 
     }

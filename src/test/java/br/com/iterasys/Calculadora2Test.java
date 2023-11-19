@@ -8,7 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 // 3 - Classe
-public class Calculadora2Test {
+public class
+Calculadora2Test {
     // 3.1 - Atributos
 
 
@@ -27,4 +28,6 @@ public class Calculadora2Test {
         // Valida - Assert
         Assert.assertEquals(resultadoAtual,resultadoEsperado);
     }
+
+
 }

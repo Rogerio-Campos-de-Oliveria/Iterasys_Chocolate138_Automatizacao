@@ -1,4 +1,7 @@
+// 1 - Pacote
 package juntos;
+
+//  2 - Bibliotecas
 public class Calculadora2 {
 
     public static double somar(double num1, double num2) {
