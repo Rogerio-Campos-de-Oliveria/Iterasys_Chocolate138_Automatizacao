@@ -21,6 +21,10 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
 
 
+// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    implementation("org.slf4j:slf4j-api:2.0.9")
+
+
 
 }
 
