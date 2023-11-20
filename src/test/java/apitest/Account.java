@@ -40,7 +40,7 @@ public class Account {
     public void testCreateUser(){
         // Arrange - Configura
         AccountEntity account = new AccountEntity(); // Instancia a entidade usuario
-        account.userName = "charlie2086"; // entrada e saida (resultado esperado)
+        account.userName = "charlie2087"; // entrada e saida (resultado esperado)
         account.password = "P@ss0rd1"; // entrada
 
 
