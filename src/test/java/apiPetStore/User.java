@@ -2,6 +2,7 @@ package apiPetStore;
 
 import com.google.gson.Gson;
 import entities.UserEntity;
+import jdk.jfr.Percentage;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
@@ -63,5 +64,48 @@ public class User {
                 .body("message",is(message))
                 ;
         
+    }
+
+        @Test
+    public void testCreatePet(){
+        // Configura
+
+
+        // Dados de Entrada
+        UserEntity user = new UserEntity();
+        user.idPet = 99;
+        user.namePet = "Big";
+        user.statusPet = "doacao";
+
+
+
+        jsonBody = gson.toJson(user);
+
+        // Dados de Saída / Resultado Esperado
+        int code = 200;
+
+        // Executa
+        // Dado - Quando - Então
+        // Given - When - Then
+        given()
+                .contentType(ct)
+                .log().all()
+                .body(jsonBody)
+
+                .when()
+                .post(uri + "pet")
+
+
+                // Valida
+
+                .then()
+                .log().all()
+                .statusCode(200)
+                .body("code", is(code))
+
+        ;
+
+
+
     }
 }

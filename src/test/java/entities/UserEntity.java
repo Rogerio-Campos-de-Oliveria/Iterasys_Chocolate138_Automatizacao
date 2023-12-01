@@ -10,4 +10,12 @@ public class UserEntity {
     public String password;
     public String phone;
     public int userStatus;
+
+    public String namePet;
+
+    public  int idPet;
+
+    public  String statusPet;
+
+
 }
