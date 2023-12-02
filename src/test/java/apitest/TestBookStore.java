@@ -7,14 +7,12 @@ import org.testng.ITestContext;
 
 import static io.restassured.RestAssured.given;
 
-public class BookStore{
+public class TestBookStore {
     String ct = "application/json"; // contentType de API
-
-    String jsonBody; // guardar o json que será enviado
 
     String uri = "https://bookstore.toolsqa.com/BookStore/v1/"; // endereço base
 
-    testAccount account = new testAccount(); // Instancia a classe Account
+    TestAccount account = new TestAccount(); // Instancia a classe TestAccount
 
 
     @BeforeMethod // antes de cada @Test

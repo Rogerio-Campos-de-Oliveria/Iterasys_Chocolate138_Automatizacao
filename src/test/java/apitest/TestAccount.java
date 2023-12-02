@@ -6,14 +6,14 @@ import com.google.gson.Gson;
 import entities.AccountEntity;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.Test;
-import org.testng.ITestContext; // Interface do TestNG para compartilhar variaveis
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
 // 3 - Classes
-public class testAccount {
+public class TestAccount {
     // 3.1 - Atributos
     String userId;
     String ct = "application/json"; // contentType de API
@@ -193,7 +193,7 @@ public class testAccount {
         // userID foi etraido no método testCreatedUser e está na memória
 
         // Dados de Seída / Resulado Esperado
-        // userName virá da classe Account e o Status Code deve ser 200
+        // userName virá da classe TestAccount e o Status Code deve ser 200
 
 
         // Executa
