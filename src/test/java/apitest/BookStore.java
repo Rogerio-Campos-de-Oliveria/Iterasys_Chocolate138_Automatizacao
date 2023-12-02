@@ -14,7 +14,7 @@ public class BookStore{
 
     String uri = "https://bookstore.toolsqa.com/BookStore/v1/"; // endereço base
 
-    Account account = new Account(); // Instancia a classe Account
+    testAccount account = new testAccount(); // Instancia a classe Account
 
 
     @BeforeMethod // antes de cada @Test

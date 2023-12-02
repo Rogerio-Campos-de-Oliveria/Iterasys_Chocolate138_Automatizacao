@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.is;
 
 // 3 - Classes
-public class Account {
+public class testAccount {
     // 3.1 - Atributos
     String userId;
     String ct = "application/json"; // contentType de API
