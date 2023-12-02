@@ -7,6 +7,7 @@ import entities.AccountEntity;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.ITestContext; // Interface do TestNG para compartilhar variaveis
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.is;
@@ -23,7 +24,7 @@ public class Account {
 
     Response resposta; // guardar o retorno da API
 
-    String token; // guardar o token - autenticação do usuário
+    static String token; // guardar o token - autenticação do usuário
 
     // 3.1.2 - Instanciar Classes Externas
 
@@ -42,7 +43,7 @@ public class Account {
     public void testCreateUser(){
         // Arrange - Configura
 
-        account.userName = "charlie2025"; // entrada e saida (resultado esperado)
+        account.userName = "charlie2026"; // entrada e saida (resultado esperado)
         account.password = "P@ss0rd1"; // entrada
 
 
@@ -87,7 +88,7 @@ public class Account {
 
 
     @Test(priority = 2)
-    public void testGenerateToken(){
+    public void testGenerateToken(ITestContext context){ // Declarar a Interface de Contexto
         // Configura
 
         // Dados de Entradas são fornecidos pela AccountEntity
@@ -118,6 +119,7 @@ public class Account {
         // Extração do Token
 
         token = resposta.jsonPath().getString("token");
+        context.setAttribute("token", token);
         System.out.println("token: " + token);
 
         // Valida
