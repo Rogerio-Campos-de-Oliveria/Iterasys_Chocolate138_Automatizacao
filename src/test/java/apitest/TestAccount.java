@@ -40,10 +40,10 @@ public class TestAccount {
 
     // Método #1 - Criar Usuário
     @Test(priority = 1)
-    public void testCreateUser(){
+    public void testCreateUser(ITestContext context){
         // Arrange - Configura
 
-        account.userName = "charlie2026"; // entrada e saida (resultado esperado)
+        account.userName = "charlie622"; // entrada e saida (resultado esperado)
         account.password = "P@ss0rd1"; // entrada
 
 
@@ -81,7 +81,8 @@ public class TestAccount {
         // extrair o userId (identificação do usuário)
 
         userId = resposta.jsonPath().getString("userID");
-        System.out.println("UserID extraido: " + userId);
+        context.setAttribute("userID", userId);
+        System.out.println("userID extraido: " + userId);
 
 
     }// fim do método de criação de usuário
@@ -112,9 +113,8 @@ public class TestAccount {
 
         .extract()
 
-
-
         ;// fim do método da geração do Token
+
 
         // Extração do Token
 
