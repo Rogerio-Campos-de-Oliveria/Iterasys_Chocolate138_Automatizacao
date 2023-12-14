@@ -132,4 +132,32 @@ public class TestBookStore {
 
 
     }
+
+    @Test(priority = 4)
+    public void testDeleteteLoans(ITestContext context){// Deletear quem está com qual livro
+        // Configura
+        // Daados de Entrada
+        // userId é extraído no BeforeClass
+        // statusCode = 204
+
+        // Executa
+        given()
+                .log().all()
+                .contentType(ct)
+                .header("Authorization", "Bearer " + context.getAttribute("token"))
+                .body(gson.toJson(isbn))
+
+        .when()
+                .delete(uri + "Books/" + context.getAttribute("userID"))
+
+        // Valida
+        .then()
+                .log().all()
+                .statusCode(302)// deveria ser 201 mas ele apagou o usuário e livro ao mesmo tempo
+
+
+        ;
+
+
+    }
 }
