@@ -29,7 +29,11 @@ public class TestBookStore {
     }
     @AfterClass // Depois da classe
     // @AfterMethod // Depos de cada @Teste
-    public void tearDown(){
+    public void tearDown() throws InterruptedException {
+
+
+        //Thread.sleep(3000); // esperar bruta - alfinete - remover antes de entregar
+
         account.testDeletUserUnauthorized(); // excluir o usuário
 
     }
@@ -145,15 +149,15 @@ public class TestBookStore {
                 .log().all()
                 .contentType(ct)
                 .header("Authorization", "Bearer " + context.getAttribute("token"))
-                .body(gson.toJson(isbn))
+
 
         .when()
-                .delete(uri + "Books/" + context.getAttribute("userID"))
+                .delete(uri + "Books?UserId=" + context.getAttribute("userID"))
 
         // Valida
         .then()
                 .log().all()
-                .statusCode(302)// deveria ser 201 mas ele apagou o usuário e livro ao mesmo tempo
+                .statusCode(204)// deveria ser 204mas ele apagou o usuário e livro ao mesmo tempo
 
 
         ;
