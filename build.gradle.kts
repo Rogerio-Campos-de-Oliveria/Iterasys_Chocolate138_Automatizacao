@@ -1,3 +1,4 @@
+
 plugins {
     id("java")
 }
@@ -21,6 +22,14 @@ dependencies {
     implementation("org.seleniumhq.selenium:selenium-java:4.10.0")
 
 
+// https://mvnrepository.com/artifact/io.cucumber/cucumber-java
+    implementation("io.cucumber:cucumber-java:7.14.0")
+
+// https://mvnrepository.com/artifact/io.cucumber/cucumber-testng
+    implementation("io.cucumber:cucumber-testng:7.14.0")
+
+
+
 // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
     implementation("io.github.bonigarcia:webdrivermanager:5.4.0")
 
@@ -33,9 +42,9 @@ dependencies {
     implementation("org.slf4j:slf4j-api:2.0.9")
 
 
-
-
 }
+
+
 
 tasks.test {
     useTestNG()

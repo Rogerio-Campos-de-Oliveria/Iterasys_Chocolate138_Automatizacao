@@ -9,14 +9,14 @@
 #      Quando clica no produto "Sauce Labs Backpack"
 
 
-  Feature: Selec Product in Store
+  Feature: Select Product in Store
     Scenario: Selecting product with Sucess
       Given I access SauceDemo Store
       When I filled a user "stander_user" and password "secret_sauce"
       And click in Login
       Then show page's title "Products"
       And show cart's link
-      When I click in product "Sauce Labs Backpack"
+      When I click in product "4"
       Then I verify the product title "Sauce Labs Backpack"
       And I verify the product price "$ 29.99"
       When I click in Add to Cart
