@@ -28,10 +28,8 @@ dependencies {
 // https://mvnrepository.com/artifact/io.cucumber/cucumber-testng
     implementation("io.cucumber:cucumber-testng:7.14.0")
 
-
-
 // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
-    implementation("io.github.bonigarcia:webdrivermanager:5.4.0")
+    implementation("io.github.bonigarcia:webdrivermanager:5.5.3")
 
 
 // https://mvnrepository.com/artifact/com.google.code.gson/gson
