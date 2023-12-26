@@ -118,12 +118,15 @@ public class testSelectProduct {
 
     @Then("I verify the product title {string} in cart")
     public void i_verify_the_product_title_in_cart(String productTitle) throws InterruptedException {
+        Thread.sleep(5000);
 
         List<WebElement> lista = driver.findElements(By.cssSelector("div.inventory_item_name"));
 
         for (int i = 1; i < lista.size(); i++) {
             driver.findElement(By.cssSelector("button.btn.btn_secondary.btn_small.cart_button")).click();
         }
+
+        Thread.sleep(3000);
 
         assertEquals(driver.findElement(By.cssSelector("div.inventory_item_name")).getText(), productTitle);
         Thread.sleep(2000);
