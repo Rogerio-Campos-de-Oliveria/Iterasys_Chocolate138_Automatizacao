@@ -25,7 +25,7 @@ Feature: Select Product in Store
     And I verify the quantity is "1"
     And I verify the product price "$29.99" in cart
 
-  Scenario Outline: Selecting Product with Success
+  Scenario Outline: Selecting Product with Success DDT
     Given I access SauceDemo store
     When I filled a user <user> and password <password>
     And I click in Login

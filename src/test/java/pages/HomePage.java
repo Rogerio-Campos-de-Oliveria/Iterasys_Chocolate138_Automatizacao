@@ -31,7 +31,7 @@ public class HomePage extends BasePage{
 
 
     // Funções e Métodos
-    public void loga(String user, String password){
+    public void logar(String user, String password){
         txtUsuario.sendKeys(user);
         txtSenha.sendKeys(password);
         btnLogin.click();
