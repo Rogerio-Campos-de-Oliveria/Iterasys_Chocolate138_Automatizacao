@@ -39,6 +39,10 @@ dependencies {
 // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
     implementation("org.slf4j:slf4j-api:2.0.9")
 
+// https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer
+    implementation("io.cucumber:cucumber-picocontainer:7.14.0")
+
+
 
 }
 

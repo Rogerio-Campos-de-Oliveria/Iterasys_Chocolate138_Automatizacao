@@ -1,24 +1,23 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class BasePage {
+public class CommonPage {
 
     @FindBy (id = "shopping_cart_container")
-    WebElement imgCarrinho;
+    public WebElement imgCarrinho;
 
     @FindBy(css = "span.title")
     WebElement lbltituloPagina;
 
-    @FindBy(css = "btn btn_primary btn_small btn_inventory")
-    WebElement btnAdicionarOuRemoverNoCarrinho;
+    @FindBy(css = "button.btn.btn_primary.btn_small.btn_inventory")
+    WebElement btnAdicionarNoCarrinho;
 
-    public WebDriver driver;
+    public WebDriver  driver;
 
-    public BasePage(WebDriver driver) {
+    public CommonPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -39,11 +38,11 @@ public class BasePage {
 
     // Esta função é apenas um exemplo, ela não vai ser usado no exercício
     public String lerTextoDoBotãoAdicionarRemoverDoCarrinho(){
-        return btnAdicionarOuRemoverNoCarrinho.getText();
+        return btnAdicionarNoCarrinho.getText();
     }
 
     public void clicarNoBotaoAdicionarOuRemoverNoCarrinho(){
-        btnAdicionarOuRemoverNoCarrinho.click();
+        btnAdicionarNoCarrinho.click();
     }
 
 

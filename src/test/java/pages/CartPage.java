@@ -1,12 +1,14 @@
 package pages;
 
-import groovy.xml.StreamingDOMBuilder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CartPage extends BasePage{
+import java.util.List;
+
+public class CartPage extends CommonPage {
     // Mapeamento
     @FindBy(css = "div.inventory_item_name")
     WebElement lblTituloProduto;
@@ -16,6 +18,12 @@ public class CartPage extends BasePage{
 
     @FindBy(css = "div.cart_quantity")
     WebElement lblQuantidade;
+
+    @FindBy(css = "btn btn_secondary btn_small cart_button" )
+    WebElement btnRemover;
+
+    @FindAll(@FindBy(css = "div.inventory_item_name"))
+    List<WebElement> lista;
 
     // Construtor
     public CartPage (WebDriver driver) {
@@ -37,4 +45,11 @@ public class CartPage extends BasePage{
         return lblQuantidade.getText();
     }
 
+    public void clicarNoBotaoRemoverNoCarrinho(){
+        btnRemover.click();
+    }
+
+    public int contarProdutosNoCarrinho(){
+        return lista.size();
+    }
 }
