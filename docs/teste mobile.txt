@@ -23,3 +23,17 @@ utilize um device farm  / serviço de teste em nuvem
 - Perfecto
 
 
+Roteiro de Mapeamento para Automação
+- Requisito: smartphone ou emulador, local ou remoto (SauceLabs) = https://app.saucelabs.com
+- Instalar o aap que eu quero testar (software alvo) ---- > MDA My Demo App
+- Instalar um app de inspeção --> Apk Info
+- Com os 2 instalados, verificque pelo Apk info as informações do app alvo
+>> appPackage: com.saucelabs.mydemoapp.android
+>> appActivity: com.saucelabs.mydemoapp.android.view.activities.SplashActivity
+- instalar o Appium Inspector
+- Configurar as credenciais do Appium ou da Device Farm desejada (Sauce Labs)
+- Configurar as desired os elementos
+- Copiar o código gerado
+
+
+
